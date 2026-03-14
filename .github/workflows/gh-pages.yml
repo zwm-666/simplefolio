@@ -30,6 +30,10 @@ jobs:
       - name: Build project
         run: npm run-script build
       
+      # Copy CNAME to dist so custom domain is preserved
+      - name: Copy CNAME
+        run: cp CNAME dist/CNAME
+      
       # Push to Github Pages
       - name: Github Pages
         uses: crazy-max/ghaction-github-pages@v2.1.3
